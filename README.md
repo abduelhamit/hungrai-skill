@@ -71,13 +71,28 @@ That's the whole mechanic. It lands best when the previous answer deserved pushb
 has an explicit licence to be the voice of reason about anything wild or hard to reverse. Invoked
 with no prior question, it falls back to a single dry line, which is deliberately not the fun path.
 
+### Saying why (optional)
+
+Anything typed after the command is read as your reason for reaching for the bar, and aims the
+second pass at it:
+
+```
+you     › /hungrai:snickers you hedged that into uselessness
+```
+
+It steers; it doesn't dictate. A reason points at what to re-examine rather than settling it: if the
+previous answer was in fact right, you get told so briefly instead of handed a correction that isn't
+there — being argued into one is the same eagerness to please the skill exists to strip out. The
+reason passes through the safety gate with everything else, so an off-limit one ends the bit.
+
 (The ad trims the sign-off for time. The skill always includes it.)
 
 ## What it does
 
 - **Corrective, not cosmetic.** Re-examines the previous answer for error, hedging and flattery and
   says the truer thing where it differs — but says so briefly if the answer was simply right,
-  rather than manufacturing a correction to justify the bit.
+  rather than manufacturing a correction to justify the bit. An optional reason typed after the
+  command aims that pass at whatever you thought was wrong.
 - **Safety gate first.** Native safety rules take precedence; then a list of off-limit topics that
   ends the bit with a fixed line rather than playing along; only then the persona.
 - **Fixed ending.** Every safe response closes with the campaign's branded sign-off and an
@@ -92,6 +107,7 @@ with no prior question, it falls back to a single dry line, which is deliberatel
 | Triggered by sharing the campaign image | Triggered by invoking the skill | The invocation *is* the hand-over |
 | — | `disable-model-invocation: true` | Otherwise the gag could fire unprompted mid-task |
 | "answer using the preceding answer for context" | Explicit corrective second pass | Matches the campaign's stated purpose; the original wording permits mere restyling |
+| — | Optional reason argument, screened by the gate | The paste carried no user input; a stated reason aims the corrective pass without being able to overrule it |
 | — | Empty-conversation fallback | The source forbids saying "no question was asked" but never says what to do instead |
 | Off-limits: *any* geographic location; personal data; legal/financial | Narrowed to the actual subject matter | Verbatim, an Azure region name or an `email` column would end the bit |
 
@@ -101,10 +117,11 @@ Everything else — persona, voice, response shape, safety-gate ordering, and th
 ## Notes
 
 - `skills/snickers/check.py` guards the invariants that would otherwise break silently: the
-  frontmatter shape, `disable-model-invocation`, and the byte-exactness of the three fixed strings,
-  which use `U+2019` apostrophes an editor may "helpfully" straighten. Run `python3 check.py`.
+  frontmatter shape, `disable-model-invocation`, the `$ARGUMENTS` plumbing that carries the reason,
+  and the byte-exactness of the three fixed strings, which use `U+2019` apostrophes an editor may
+  "helpfully" straighten. Run `python3 check.py`.
 - Installed, the skill costs roughly **225 tokens in every session** for its description, plus
-  ~3.3k when invoked (`claude plugin details hungrai`). It is a joke; budget accordingly.
+  ~3.8k when invoked (`claude plugin details hungrai`). It is a joke; budget accordingly.
 
 ## Licence
 

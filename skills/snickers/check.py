@@ -3,7 +3,8 @@
 
 The campaign's two mandatory lines must stay byte-exact, including the U+2019
 apostrophes — an editor that straightens quotes would break fidelity silently.
-Also asserts the skill can never auto-invoke.
+Also asserts the skill can never auto-invoke, and that the optional reason
+argument still reaches the payload.
 """
 import re, sys, pathlib
 
@@ -23,6 +24,9 @@ keys = dict(re.findall(r"^([a-z_-]+):\s*(.*)$", fm.group(1), re.M)) if fm else {
 check(keys.get("name") == "snickers", "name is snickers")
 check(keys.get("disable-model-invocation") == "true", "model invocation disabled (never auto-fires)")
 check(keys.get("user-invocable") == "true", "user-invocable")
+check("argument-hint" in keys, "optional reason argument is hinted")
+# Dropping the placeholder would silently discard the reason the user typed.
+check("$ARGUMENTS" in src, "$ARGUMENTS placeholder reaches the payload")
 
 SIGNOFF = "AI isn’t itself when it’s hungry."
 DISCLAIMER = "*Heads up: Snickers provided the snack. The LLM provided the answer. So please fact check.*"
