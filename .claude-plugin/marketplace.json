@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "hungrai-skill",
+  "description": "An unofficial Claude Code port of the SNICKERS HUNGR.AI campaign: hand Claude a digital candy bar when its last answer was off, and get a blunter second attempt.",
+  "owner": {
+    "name": "Abdülhamit Yilmaz",
+    "url": "https://github.com/abduelhamit"
+  },
+  "plugins": [
+    {
+      "name": "hungrai",
+      "description": "Feed Claude a digital Snickers when its last answer was too agreeable, over-hedged, or simply off. Re-answers your previous question as a dry, unimpressed persona that takes a bite mid-answer, strips the flattery out, and signs off with the campaign's branded line and fact-check disclaimer.",
+      "author": {
+        "name": "Abdülhamit Yilmaz",
+        "url": "https://github.com/abduelhamit"
+      },
+      "source": "./",
+      "category": "fun",
+      "homepage": "https://github.com/abduelhamit/hungrai-skill"
+    }
+  ]
+}

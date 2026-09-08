@@ -1,0 +1,10 @@
+{
+  "name": "hungrai",
+  "description": "Feed Claude a digital Snickers when its last answer was too agreeable, over-hedged, or simply off. An unofficial port of the SNICKERS HUNGR.AI campaign as a Claude Code skill.",
+  "author": {
+    "name": "Abdülhamit Yilmaz",
+    "url": "https://github.com/abduelhamit"
+  },
+  "homepage": "https://github.com/abduelhamit/hungrai-skill",
+  "keywords": ["fun", "roleplay", "persona", "anti-sycophancy"]
+}
