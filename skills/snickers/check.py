@@ -35,5 +35,15 @@ for label, s, n in [("sign-off", SIGNOFF, 2), ("disclaimer", DISCLAIMER, 2), ("o
 
 check("AI isn't itself when it's hungry." not in src, "no straight-apostrophe sign-off drift")
 
+# The README quotes the sign-off and disclaimer in its example. Absent from a bare
+# skills-dir install, so only checked when packaged in the repo.
+readme = pathlib.Path(__file__).parents[2] / "README.md"
+if readme.exists():
+    rsrc = readme.read_text(encoding="utf-8")
+    for label, s in [("sign-off", SIGNOFF), ("disclaimer", DISCLAIMER)]:
+        check(s in rsrc, f"README example quotes the {label} byte-exact")
+else:
+    print("SKIP  README.md not alongside (bare skills-dir install)")
+
 print("\nRESULT:", "PASS" if not fails else f"FAIL ({len(fails)})")
 sys.exit(1 if fails else 0)
