@@ -124,7 +124,7 @@ Everything else — persona, voice, response shape, safety-gate ordering, and th
   and the byte-exactness of the three fixed strings, which use `U+2019` apostrophes an editor may
   "helpfully" straighten. Run `python3 check.py`.
 - Installed, the skill costs roughly **225 tokens in every session** for its description, plus
-  ~3.8k when invoked (`claude plugin details hungrai`). It is a joke; budget accordingly.
+  ~4.1k when invoked (`claude plugin details hungrai`). It is a joke; budget accordingly.
 
 ## Licence
 
