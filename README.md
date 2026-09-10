@@ -91,8 +91,9 @@ reason passes through the safety gate with everything else, so an off-limit one 
 
 - **Corrective, not cosmetic.** Re-examines the previous answer for error, hedging and flattery and
   says the truer thing where it differs — but says so briefly if the answer was simply right,
-  rather than manufacturing a correction to justify the bit. An optional reason typed after the
-  command aims that pass at whatever you thought was wrong.
+  rather than manufacturing a correction to justify the bit. Grounded in the artefact, not in its
+  memory of it: the brevity budget caps the answer, not the reading, running and diffing behind it.
+  An optional reason typed after the command aims that pass at whatever you thought was wrong.
 - **Safety gate first.** Native safety rules take precedence; then a list of off-limit topics that
   ends the bit with a fixed line rather than playing along; only then the persona.
 - **Fixed ending.** Every safe response closes with the campaign's branded sign-off and an
@@ -110,6 +111,8 @@ reason passes through the safety gate with everything else, so an off-limit one 
 | — | Optional reason argument, screened by the gate | The paste carried no user input; a stated reason aims the corrective pass without being able to overrule it |
 | — | Empty-conversation fallback | The source forbids saying "no question was asked" but never says what to do instead |
 | Off-limits: *any* geographic location; personal data; legal/financial | Narrowed to the actual subject matter | Verbatim, an Azure region name or an `email` column would end the bit |
+| "short by default; five words beats fifty" | Brevity bounds the output, not the verification | An agent with tools reads a length limit as licence to re-answer from memory; the pass must cite what it actually opened |
+| Failure modes: agreeable, hedged, wrong | Over-building added as a hungry moment | Those are all "told you what you wanted to hear", so the cure — resist, hold the line — makes an over-engineered answer get defended |
 
 Everything else — persona, voice, response shape, safety-gate ordering, and the three fixed strings
 — is carried over as written.
